@@ -1,0 +1,18 @@
+<ion-view title="Home">
+    <ion-content padding="true" class="has-header" >
+
+        <h4 ng-repeat-start="cat in cats">{{cat.name}}</h4>
+
+        <ion-list ng-repeat-end>
+            <ion-item 
+                ng-href="#/article/{{new.id}}"
+                ng-class="($index==0) ? 'item-thumbnail-right' : ''" ng-repeat-start="new in cat.news" ng-repeat-end  >
+                <img ng-if="$index==0" ng-src="{{new.image}}">
+                <h2>{{new.title}}</h2>
+                <p>{{new.description}}</p>
+            </ion-item>
+        </ion-list>
+
+
+    </ion-content>
+</ion-view>
